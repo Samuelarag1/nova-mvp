@@ -51,8 +51,8 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onCancel }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-6">
-      <div className="flex justify-between items-center mb-6">
+    <form onSubmit={handleSubmit} className="flex flex-col h-full bg-white relative">
+      <div className="sticky top-0 bg-white z-10 px-6 py-4 border-b border-slate-100 flex justify-between items-center shrink-0">
         <h3 className="text-xl font-bold text-slate-800">
           {product ? t('editProduct') : t('addProduct')}
         </h3>
@@ -61,7 +61,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onCancel }
         </button>
       </div>
 
-      <div className="space-y-4">
+      <div className="flex-1 overflow-y-auto p-6 space-y-4">
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1">{t('productName')}</label>
           <input 
@@ -141,8 +141,9 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onCancel }
             {error}
           </div>
         )}
+      </div>
 
-        <div className="flex gap-3 pt-4">
+      <div className="sticky bottom-0 bg-white p-4 border-t border-slate-100 flex gap-3 shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <button 
             type="button" 
             onClick={onCancel}
@@ -157,7 +158,6 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onCancel }
             <Save size={18} />
             {t('save')}
           </button>
-        </div>
       </div>
     </form>
   );
