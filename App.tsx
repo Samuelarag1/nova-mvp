@@ -59,6 +59,14 @@ const App: React.FC = () => {
     localStorage.setItem('biz_products', JSON.stringify(products));
   }, [products]);
 
+  // Prevent mobile browser body scroll for app-like feel
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
   const metrics = useMemo((): BusinessMetrics => {
     const totalRevenue = transactions
       .filter(t => t.type === TransactionType.SALE)

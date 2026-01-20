@@ -79,7 +79,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
             step="0.01"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
-            className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+            className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-base sm:text-sm"
             placeholder="0.00"
           />
         </div>
@@ -91,7 +91,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
                     <select
                         value={selectedProductId}
                         onChange={(e) => setSelectedProductId(e.target.value)}
-                         className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white"
+                         className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-base sm:text-sm"
                     >
                         <option value="">{t('selectProduct')}</option>
                         {products.map(p => (
@@ -108,7 +108,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
                         min="1"
                         value={quantity}
                         onChange={(e) => setQuantity(e.target.value)}
-                        className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-base sm:text-sm"
                         disabled={!selectedProductId}
                     />
                  </div>
@@ -121,7 +121,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
             <select 
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none bg-white"
+              className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none bg-white text-base sm:text-sm"
             >
               {CATEGORIES[type].map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
@@ -146,7 +146,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
                   type="text" 
                   value={supplier}
                   onChange={(e) => setSupplier(e.target.value)}
-                  className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-base sm:text-sm"
                   placeholder="e.g., Tech Distributor Inc."
                 />
             </div>
@@ -157,7 +157,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
           <textarea 
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all h-24 resize-none"
+            className="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all h-24 resize-none text-base sm:text-sm"
             placeholder={t('addDetails')}
           />
         </div>
