@@ -87,7 +87,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
         </div>
 
         {type === TransactionType.SALE && products.length > 0 && (
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                  <div className="col-span-2">
                     <label className="block text-sm font-medium text-slate-700 mb-1">{t('productName')} ({t('optional')})</label>
                     <select
@@ -117,7 +117,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({ type, onSubmit, onCan
             </div>
         )}
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-slate-700 mb-1">{t('category')}</label>
             <select 

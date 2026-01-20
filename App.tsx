@@ -121,7 +121,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex h-screen bg-slate-50 overflow-hidden">
+    <div className="flex h-[100dvh] bg-slate-50 overflow-hidden">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col">
         <div className="p-6">
@@ -207,7 +207,7 @@ const App: React.FC = () => {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden relative">
-        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 shrink-0 z-10">
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 shrink-0 z-10">
           <div className="flex items-center gap-4">
             <h2 className="text-lg font-semibold text-slate-800 capitalize">{t(view as any)}</h2>
           </div>
@@ -259,12 +259,14 @@ const App: React.FC = () => {
         </div>
 
         {/* Mobile Nav */}
-        <div className="md:hidden h-16 bg-white border-t border-slate-200 flex items-center justify-around px-2 shrink-0">
-          <button onClick={() => setView('dashboard')} className={`p-2 ${view === 'dashboard' ? 'text-blue-600' : 'text-slate-400'}`}><LayoutDashboard size={24} /></button>
-          <button onClick={() => setView('sales')} className={`p-2 ${view === 'sales' ? 'text-blue-600' : 'text-slate-400'}`}><TrendingUp size={24} /></button>
-          <button onClick={() => { setFormType(TransactionType.SALE); setIsFormOpen(true); }} className="p-3 bg-blue-600 text-white rounded-full -translate-y-4 shadow-lg"><PlusCircle size={24} /></button>
-          <button onClick={() => setView('expenses')} className={`p-2 ${view === 'expenses' ? 'text-blue-600' : 'text-slate-400'}`}><TrendingDown size={24} /></button>
-          <button onClick={() => setView('inventory')} className={`p-2 ${view === 'inventory' ? 'text-blue-600' : 'text-slate-400'}`}><Package size={24} /></button>
+        <div className="md:hidden bg-white border-t border-slate-200 shrink-0 pb-[env(safe-area-inset-bottom)]">
+          <div className="h-16 flex items-center justify-around px-2">
+            <button onClick={() => setView('dashboard')} className={`p-2 ${view === 'dashboard' ? 'text-blue-600' : 'text-slate-400'}`}><LayoutDashboard size={24} /></button>
+            <button onClick={() => setView('sales')} className={`p-2 ${view === 'sales' ? 'text-blue-600' : 'text-slate-400'}`}><TrendingUp size={24} /></button>
+            <button onClick={() => { setFormType(TransactionType.SALE); setIsFormOpen(true); }} className="p-3 bg-blue-600 text-white rounded-full -translate-y-4 shadow-lg"><PlusCircle size={24} /></button>
+            <button onClick={() => setView('expenses')} className={`p-2 ${view === 'expenses' ? 'text-blue-600' : 'text-slate-400'}`}><TrendingDown size={24} /></button>
+            <button onClick={() => setView('inventory')} className={`p-2 ${view === 'inventory' ? 'text-blue-600' : 'text-slate-400'}`}><Package size={24} /></button>
+          </div>
         </div>
 
         {/* Modal Overlay */}

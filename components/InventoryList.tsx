@@ -40,14 +40,14 @@ const InventoryList: React.FC<InventoryListProps> = ({ products, onAdd, onEdit, 
 
   return (
     <div className="space-y-6">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
         <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
             <Package className="text-blue-600" />
             {t('inventory')}
         </h2>
         <button 
             onClick={() => { setEditingProduct(undefined); setIsFormOpen(true); }}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all font-medium"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-xl shadow-lg shadow-blue-500/20 hover:bg-blue-700 transition-all font-medium"
         >
             <PlusCircle size={20} />
             {t('addProduct')}
